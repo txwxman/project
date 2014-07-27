@@ -35,4 +35,6 @@ reduced <- merged2[ , keep]
 #Creates a second, independent tidy data set with the average of each variable
 #for each activity and each subject. 
 
-write.table(reduced, file="tidyDataSet.txt", sep=",")
+tidyData <-aggregate(reduced, by=list(reduced$subject,reduced$activity),FUN=mean, na.rm=TRUE)
+
+write.table(tidyData, file="tidyDataSet.txt", sep=",")

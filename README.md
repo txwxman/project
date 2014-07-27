@@ -19,6 +19,8 @@ We rbind the subject test and training data and add a subject column to the merg
 
 We keep only the measurements on the mean and standard deviation for each measurement. 
 
+We then find the mean across activities and subjects.  
+
 We then export a tidy dataset to a text file using write.table().
 
 See CodeBook.md for details on the variables.
