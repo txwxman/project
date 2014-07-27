@@ -36,14 +36,3 @@ reduced <- merged2[ , keep]
 #for each activity and each subject. 
 
 write.table(reduced, file="tidyDataSet.txt", sep=",")
-
-
-###################
-#Use descriptive activity names to name the activities in the data set
-activity_labels <- read.table("activity_labels.txt")
-reduced_w_act_labels <- merge(reduced, activity_labels, by.x="V1.1", by.y="V1", all=TRUE)
-
-#Appropriately label the data set with descriptive variable names.
-var_names <- read.table("features.txt")
-names(merged) <- var_names[2]
-names(mydat)[names(mydat)%in% names_to_be_changed] <- name_changes
